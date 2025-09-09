@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "carro.js"></script>
+</head>
+<body>
+    <script>
+        var meuCarro = new Carro('vermelho', 250);
+        var oponente = new Carro('azul', 300);
+        meuCarro.acelerar();
+        document.write('Meu carro: '+ '<br>Cor: ' + meuCarro.cor + '<br>Velocidade Atual:' + meuCarro.velocAtual +
+            '<br>Velocidade Máxima: ' + meuCarro.velocMaxima
+        );
+        document.write('<br><br>');
+        meuCarro.acelerar();
+        document.write('Meu carro: '+ '<br>Cor: ' + meuCarro.cor + '<br>Velocidade Atual: ' + meuCarro.velocAtual +
+            '<br>Velocidade Máxima: ' + meuCarro.velocMaxima
+        );
+        document.write('<br><br>')
+
+        oponente.acelerar();
+        document.write('Carro do Oponente: ' + '<br>Cor: ' + oponente.cor +'<br>Velocidade Atual: ' + oponente.velocAtual +
+            '<br>Velocidade Máxima: ' + oponente.velocMaxima
+        );
+        document.write('<br><br>');
+        oponente.acelerar();
+        document.write('Carro do Oponente: ' + '<br>Cor: ' + oponente.cor +'<br>Velocidade Atual: ' + oponente.velocAtual +
+            '<br>Velocidade Máxima: ' + oponente.velocMaxima
+        );
+        document.write('<br><br>');
+       
+    </script>
+</body>
+</html>

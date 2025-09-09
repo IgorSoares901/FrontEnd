@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic</title>
+    <script src = spritesheet.js></script>
+</head>
+<body>
+    <canvas id = "sonic" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById('sonic');
+        var context = canvas.getContext('2d');
+        var imgSonic = new Image();
+        imgSonic.src = 'spritesheet.png';
+        // quero passar context, imagem, Linhas, colunas
+        var sheet = new Spritesheet(context, imgSonic, 3, 8)
+
+        //duração de cada quadro
+        sheet.intervalo = 60;
+        //correndo para a direita
+        sheet.linha = 1;
+
+        //animação
+        imgSonic.onload = gameLoop;
+        function gameLoop() {
+            context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+            //avançar na animação
+            sheet.proximoQuadro();
+            //onde desenhar
+            sheet.desenhar(100, 100);
+            requestAnimationFrame(gameLoop);
+
+        }
+        </script>
+</body>
+</html>
